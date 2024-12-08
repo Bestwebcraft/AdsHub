@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aare Ads Hub - Video Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, select, button {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .popup button {
+            background-color: #007BFF;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showPopup() {
+            const popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Advertise Your Video</h2>
+        <form onsubmit="event.preventDefault(); showPopup();">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="videoLink">YouTube Video Link</label>
+            <input type="url" id="videoLink" name="videoLink" placeholder="Enter YouTube video link" required>
+
+            <label for="category">Video Category</label>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Product Ads">Product Ads</option>
+                <option value="Company Ads">Company Ads</option>
+                <option value="500k Views">500k Views</option>
+                <option value="1 Million Views">1 Million Views</option>
+            </select>
+
+            <label for="whatsapp">WhatsApp Number</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Enter WhatsApp number" required>
+
+            <label for="views">Number of Views Needed</label>
+            <select id="views" name="views" required>
+                <option value="" disabled selected>Select Views</option>
+                <option value="500,000">500,000 Views - ₦250,000</option>
+                <option value="1,000,000">1,000,000 Views - ₦500,000</option>
+            </select>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="popup" class="popup">
+        <p>Thank you for your submission! An Aare Ads Hub agent will contact you on WhatsApp and Email for payment and to schedule when your video will be published.</p>
+        <button onclick="document.getElementById('popup').style.display='none'">Close</button>
+    </div>
+</body>
+</html>
